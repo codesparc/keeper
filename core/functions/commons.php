@@ -1,12 +1,9 @@
-<?php
+ <?php
  include_once '../includes/header.php';
- include_once '../../db.php';
- var_dump(helperURL::configURL().'db.php')
- 
-/* include_once helperURL::configURL().'db.php';*/
+ include_once helperURL::configURL().'db.php';
 
 //function to add category into database
-/*function insertCategory($catName,$parentID,$status){
+function insertCategory($catName,$parentID,$status){
 	$sql = "INSERT INTO keep_categories COLUMN(categoryName,parentID,status) VALUES($catName,$parentID,$status)";
 	$response = mysqli_query($conn,$sql);
 	if($response){
@@ -16,6 +13,6 @@
 	}
 
 	return 'I am working';
-} */ 
+}  
 
 ?>

@@ -7,17 +7,17 @@
 
   $sqlLogin = "SELECT * from keep_user WHERE email ='".$email."' AND passcode ='".$password."'";  
   $sqlLoginObj = mysqli_query($conn,$sqlLogin);
-  $sqlLoginResult = mysqli_fetch_assoc($sqlLoginObj);
-
+  $sqlLoginResult = mysqli_fetch_assoc($sqlLoginObj);  
   #Check if record is not empty 
   $loginVar = ( !empty($sqlLoginResult) ) ? '1' : '0';
-  echo $loginVar; die;
-  if( $loginVar === '1' ){
-  	 if($sqlLoginResult['is_admin'] === '1'){  	 	
-  	 	$_SESSION['admin'] = $sqlLoginResult['id'];  	 	
+  
+  if( $loginVar == '1' ){    
+  	 if($sqlLoginResult['is_admin'] == '1'){
+      $_SESSION['admin'] = $sqlLoginResult['id'];           
   	 	echo $loginVar;
   	 }else{
   		#redirect user to dashboard
+      echo 'I am not admin '.$loginVar;
   	 }  	 
   }else{
 

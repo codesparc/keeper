@@ -13,18 +13,19 @@ $(document).ready(function(){
 		}else if(response.passwordErrorMsg){
 			$('.error').css('display','block');
 			$(errorElem).html(response.passwordErrorMsg);			
-		}else{			
+		}else{				
 			$.ajax({
 				type: 'POST',
-				url : AjaxUrl() + '/includes/login.php',
+				url : AjaxUrl() + '/core/handlers/ajax.php',
 				data: {
 				  email: login.email,
-				  password: login.password
+				  password: login.password,
+				  flag:'login'
 				},			
-				success: function(data){					   				
-					if(data==1){
-						$('.error').css('display','none');
-						//console.log(AjaxUrl()+'/dashboard/admin');
+				success: function(data){
+				    //console.log('login data: ',data);					   				
+					if(data=='1'){
+						$('.error').css('display','none');												
 						window.location = AjaxUrl()+'/dashboard/admin';
 					}else{
 					  $('.error').css('display','block');

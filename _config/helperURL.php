@@ -2,6 +2,9 @@
 /**
  Application Configuration
 */
+ ini_set('error_reporting', 'E_ALL');
+ ini_set("display_errors","on");
+
  class helperURL
  {	
     function protocol(){
@@ -13,6 +16,10 @@
 
 	function baseURL(){	  
 	  return self::serverURL().'/keeper/';
+	}
+
+	public static function basepath(){
+		return dirname(__DIR__);
 	}
 
 	function configURL(){

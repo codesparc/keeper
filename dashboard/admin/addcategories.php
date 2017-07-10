@@ -1,7 +1,7 @@
 <?php include_once '../includes/header.php'; ?>
 <div class="main-container">
 	<div class="dash-main">
-	<?php require_once helperURL::includeURL().'sidebar.php'; ?>
+	<?php require_once helperURL::basepath().'/includes/sidebar.php'; ?>
     <section>
         <div class="dash-rightSection">
             <h2>Add Categories</h2> 

@@ -1,4 +1,4 @@
-<?php require_once ('../../config/helperURL.php'); ?>
+<?php //require_once ('../../config/helperURL.php'); ?>
 <script>
       var BASE = "<?php echo $_SERVER['HTTP_HOST']; ?>",
       WEB_SITE = "<?php echo ($_SERVER['HTTP_HOST'] == 'localhost')?"/keeper":""; ?>";      

@@ -1,7 +1,7 @@
 <?php 
 session_start();  
 include_once '../../core/init.php';
-
+require_once Url::basepath().'/template/common/header.php';
 if(!isset($_SESSION['admin'])){     
     header('location: ../../index.php');    
 } 
@@ -10,7 +10,7 @@ if(!isset($_SESSION['admin'])){
 
 <div class="main-container">
   <div class="dash-main">
-    <?php require_once helperURL::basepath().'/includes/sidebar.php'; ?>
+    <?php require_once Url::basepath().'/template/common/sidebar.php'; ?>
     <section>
         <div class="dash-rightSection">
             <h2>Welcome Admin</h2> 
@@ -21,4 +21,4 @@ if(!isset($_SESSION['admin'])){
 </body>
 
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once Url::basepath().'/template/common/footer.php'; ?>

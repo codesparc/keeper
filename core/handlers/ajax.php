@@ -7,24 +7,28 @@ if(isset($_POST)){
   $email = (!empty($_POST['email']))?$_POST['email']:'';
   $pass  = (!empty($_POST['password']))?$_POST['password']:'';
   
-  /* This works only for login*/
- /* if($flag == 'login')
-  { */ 	
-  	$user = new User();
-  	//print_r($user); die;
-  	$response = $user->login($email,$pass);
-  	print_r($response);
-  	
-  	if($response){
+ /* Login to user */
+ if($flag == 'login')
+  { 
+  	$user = new User();  
+  	$response = $user->login($email,$pass);  	
+    
+    if(!empty($response)){//check is database record is not empty
+       if($response->is_admin == '1'){
+          $_SESSION['admin'] = $response->is_admin;
+          echo 1;
+       }else{
+         echo 'redirecting to user dashboard';
+       }         
   	}else{
-  		echo "no response";
+  		echo "No such user exist in database";
   	}	
-  /*}*/
+  }
 
-  //print_r($_POST);
+
 }
 
-print_r($_POST);
+
 
 ?>
 

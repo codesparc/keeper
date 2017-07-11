@@ -16,8 +16,8 @@ class User
   		 $this->password = $password;
   		 $sql="SELECT * FROM keep_user WHERE email='".$this->email."' AND passcode='".$this->password."' ";  		 
   		 $result = $this->conn->query($sql); 		   		 
-  		 $row=$result->fetch_object();  		
-  		 /*print_r($row);*/
+  		 return $row=$result->fetch_object();  
+  		 		  		 
 	}
 }
 

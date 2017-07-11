@@ -1,6 +1,6 @@
 <?php 
 session_start();  
-include_once '../includes/header.php';
+include_once '../../core/init.php';
 
 if(!isset($_SESSION['admin'])){     
     header('location: ../../index.php');    

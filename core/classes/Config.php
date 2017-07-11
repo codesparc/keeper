@@ -7,13 +7,18 @@ class Config{
 	public static function get($path=null){
 
 		if($path){
-			$config=explode('/',$path);
-			foreach ($config as $key => $value) {
-				# code...
+			$path=explode('/',$path);			
+			$config=$GLOBALS['config'];
+			foreach ($path as $bit) {
+				if(isset($config[$bit])){
+					$config=$config[$bit];
+					var_dump($config);
+				}
 			}
+		 return $config;
 		}
 
-		print_r($config);
+		return false;
 	}
 
 

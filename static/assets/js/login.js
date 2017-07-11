@@ -24,7 +24,7 @@ $(document).ready(function(){
 				},			
 				success: function(data){
 				    //console.log('login data: ',data);					   				
-					if(data=='1'){
+					if(data==1){
 						$('.error').css('display','none');												
 						window.location = AjaxUrl()+'/dashboard/admin';
 					}else{

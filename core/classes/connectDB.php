@@ -16,8 +16,7 @@ class connectDB{
 		// Check connection
 		if ($conn->connect_error) {
 		    die("Connection failed: " . $conn->connect_error);
-		} 
-		//echo "Connected successfully";
+		} 	
 		return $conn;
 		/*try{
 		 $conn = new PDO("mysql:host=".self::$hostname.";dbname=".self::$db."", self::$username, self::$password);

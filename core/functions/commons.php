@@ -1,18 +1,25 @@
  <?php
- include_once '../includes/header.php';
- include_once helperURL::configURL().'db.php';
 
-//function to add category into database
-function insertCategory($catName,$parentID,$status){
-	$sql = "INSERT INTO keep_categories COLUMN(categoryName,parentID,status) VALUES($catName,$parentID,$status)";
-	$response = mysqli_query($conn,$sql);
+//Add category
+function insertCategory($catName,$parentID,$status,$conn){
+	$sql = "INSERT INTO category(categoryName,parentID,status) VALUES('".$catName."',$parentID,$status)";
+
+	$response = $conn->query($sql);
+	
 	if($response){
-        echo 'Category added';
+        return 1;
 	}else{
 		mysqli_connect_error($conn);
 	}
 
-	return 'I am working';
-}  
+}
+
+//Check if category alredy exist
+function isCategory($category,$conn){
+	$sql = "SELECT categoryName from category WHERE categoryName LIKE'".$category."%'";
+    $response = $conn->query($sql);
+    $result = $conn->fetch_assoc($response);
+    //echo $result['categoryName'];	
+}
 
 ?>

@@ -1,7 +1,11 @@
-<?php include_once '../includes/header.php'; ?>
+<?php 
+include_once '../../core/init.php';
+include_once Url::basepath().'template/common/header.php'; 
+
+?>
 <div class="main-container">
 	<div class="dash-main">
-	<?php require_once helperURL::basepath().'/includes/sidebar.php'; ?>
+	<?php require_once Url::basepath().'template/common/sidebar.php'; ?>
     <section>
         <div class="dash-rightSection">
             <h2>Add Categories</h2> 
@@ -20,7 +24,8 @@
               <div class="form-group">
                 <label for="parentcategory">Parent Category</label>
                 <select class="form-control" id="parentCat">
-                  <option value="0">Root</option>                  
+                  <option value="0">Root</option>  
+                  <option value="1">Electronics</option>                
                 </select>
               </div>
         		  <div class="form-group">                
@@ -39,4 +44,4 @@
         </div>
     </section>
 </div>
-<?php include_once '../includes/footer.php'; ?>
+<?php include_once Url::basepath().'template/common/footer.php'; ?>
